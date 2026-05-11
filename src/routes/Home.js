@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 
 import Movie from '../components/Movie'
+import './Home.css'
 
 const Home = () => {
     const [loading, setLoading] = useState(true)
@@ -22,27 +23,40 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
+        <main className="home">
             {
                 loading
                     ?
-                    <h1>Loading...</h1>
+                    <section aria-live="polite">
+                        <div></div>
+                        <h1>Loading movies...</h1>
+                    </section>
                     :
-                    <div>
-                        {movies.map((movie) =>
-                            <Movie
-                                key={movie.id}
-                                id={movie.id}
-                                coverImg={movie.medium_cover_image}
-                                title={movie.title}
-                                summary={movie.summary}
-                                rating={movie.rating}
-                                genres={movie.genres}
-                            />
-                        )}
-                    </div>
+                    <>
+                        <section>
+                            <p>Top rated movies</p>
+                            <h1>Movies worth your next night in</h1>
+                            <p>
+                                Highly rated films sorted by release year, gathered into a clean
+                                watchlist-style view.
+                            </p>
+                        </section>
+                        <section aria-label="Movie list">
+                            {movies.map((movie) =>
+                                <Movie
+                                    key={movie.id}
+                                    id={movie.id}
+                                    coverImg={movie.medium_cover_image}
+                                    title={movie.title}
+                                    summary={movie.summary}
+                                    rating={movie.rating}
+                                    genres={movie.genres}
+                                />
+                            )}
+                        </section>
+                    </>
             }
-        </div>
+        </main>
     )
 }
 

@@ -51,6 +51,36 @@ a {
     line-height: 1.7;
 }
 
+.home label {
+    width: min(320px, 100%);
+    margin-top: 28px;
+    display: grid;
+    gap: 10px;
+    color: #bfdbfe;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.home select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 42px 0 14px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(219, 234, 254, 0.5);
+    border-radius: 8px;
+    color: #172033;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.home select:focus {
+    outline: 3px solid rgba(94, 234, 212, 0.36);
+    outline-offset: 2px;
+}
+
 .home > section[aria-label] {
     width: min(1120px, 100%);
     margin: 0 auto;

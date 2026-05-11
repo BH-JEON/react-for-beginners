@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import propTypes from 'prop-types'
 
-const Movie = ({id ,coverImg, title, summary, rating, genres}) => {
+const Movie = ({id, coverImg, title, summary, rating, genres}) => {
     return <div>
         <img src={coverImg} alt={title}/>
         <h2>
-            <Link to={`movies/${id}`}>{title}</Link>
+            <Link to={`/movies/${id}`}>{title}</Link>
         </h2>
         <p>{summary}</p>
         <p>Rating: {rating}</p>
